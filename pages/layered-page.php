@@ -10,8 +10,13 @@ get_header();
 $block_path = 'elements/blocks/layered/';
 ?>
 
+<!-- primary -->
 <div id="primary" class="content-area">
+
+	<!-- main -->
 	<main id="main" class="site-main">
+
+		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<?php
@@ -92,12 +97,15 @@ $block_path = 'elements/blocks/layered/';
 			endif;
 			?>
 
-		</article><!-- #post-<?php the_ID(); ?> -->
-	</main><!-- #main -->
-</div><!-- #primary -->
+		</article>
+		<!-- #post-<?php the_ID(); ?> -->
+
+	</main>
+	<!-- END main -->
+
+</div>
+<!-- END primary -->
 
 <?php get_footer(); ?>
-
-<?php get_template_part( 'elements/layout/layout.newsletter' ); ?>
 
 <?php get_template_part( 'elements/layout/layout.footer' ); ?>
