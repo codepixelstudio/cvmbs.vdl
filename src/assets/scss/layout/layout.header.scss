@@ -1,0 +1,13 @@
+// stylesheet :: header styles
+
+    // settings
+    $header : 1rem;
+
+    // header
+    #site-header {
+
+        @include flex-h-s-v-st( false )
+
+        @include fill( $dark );
+
+    }

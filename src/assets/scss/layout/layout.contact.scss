@@ -1,0 +1,131 @@
+// stylesheet :: contact info styles
+
+    // settings
+    $contact : 1rem;
+
+    // styles
+    .homepage_section {
+
+        // contact
+        &.contact {
+
+            padding: 3rem 5rem 3rem 5rem;
+
+            @include fill( $beige );
+
+            // buttons
+            .contact_entry {
+
+                position: relative;
+
+                @include flex-v-c-h-s( true );
+
+                margin: 0 2rem 0 0;
+                padding: 0 0 0 2.25rem;
+
+                @include color( $app05, 0.165 );
+
+                // before
+                &:before {
+
+                    position: absolute;
+
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    z-index: 10;
+
+                    content: '';
+
+                    width: 2rem;
+                    height: 2rem;
+
+                    @include codicon( 2rem, 2rem, 0.5rem 0 0 0, 1.5rem, inherit, inherit );
+
+                }
+
+                // phone
+                &.phone {
+
+                    // before
+                    &:before {
+
+                        content: '\EA1D';
+
+                        @include color( $g140 );
+
+                    }
+
+                }
+
+                // email
+                &.email {
+
+                    // before
+                    &:before {
+
+                        content: '\EA2F';
+
+                        @include color( $blue );
+
+                    }
+
+                }
+
+                // shipping
+                &.shipping {
+
+                    // before
+                    &:before {
+
+                        content: '\EC0F';
+
+                        @include color( $cvellow );
+
+                    }
+
+                }
+
+                // usps
+                &.usps {
+
+                    // before
+                    &:before {
+
+                        content: '\EA35';
+
+                        @include color( $roarange );
+
+                    }
+
+                }
+
+                // common
+                span {
+
+                    // label
+                    &.label {
+
+                        @include font( $industry, 0.6875rem, 700 );
+
+                        @include text( $up );
+
+                    }
+
+                    // content
+                    &.content {
+
+                        @include font( $klavislim, 1rem, 400 );
+
+                        @include typo( 1rem, 0.035em );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

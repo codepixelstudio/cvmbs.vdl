@@ -1,0 +1,290 @@
+// stylesheet :: VTH billboard layout styles
+
+    // settings
+    $billboard : 100vh;
+
+    // styles
+    #special-billboard.vdl {
+
+        position: relative;
+
+        @include flex-h-j-v-s( false );
+
+        margin: 5rem 0 0 0;
+
+        overflow: hidden;
+
+        // common
+        .billboard_component {
+
+            // main view
+            &.main {
+
+                position: relative;
+
+                @include flex-v-b-h-s( false );
+
+                width: 65%;
+                // padding: 0 5rem 5rem 5rem;
+
+                background: {
+
+                    // image: url(../img/billboard.05.jpg);
+                    repeat: no-repeat;
+                    size: cover;
+                    position: center bottom;
+
+                }
+
+                // after
+                &:after {
+
+                    content:'';
+
+                    position: absolute;
+
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    z-index: 10;
+
+                    background: {
+
+                        image:
+
+                            linear-gradient(
+
+                                0deg,
+                                transparentize( $nite, 0.165 ) 0%,
+                                transparent 100%
+
+                            ),
+
+                            linear-gradient(
+
+                                0deg,
+                                transparentize( $g135, 0.165 ) 0%,
+                                transparent 100%
+
+                            ),
+
+                            linear-gradient(
+
+                                45deg,
+                                transparentize( $g140, 0.000 ) 0%,
+                                transparent 100%
+
+                            )
+
+                        ;
+
+                    }
+
+                }
+
+                // text
+                .billboard_text {
+
+                    position: relative;
+
+                    z-index: 20;
+
+                    margin: 0 5rem 5rem 5rem;
+
+                    // headline
+                    .headline {
+
+                        margin: 0 0 1rem 0;
+
+                        @include font( $klavislim, 4rem, 400 );
+
+                        @include typo( 2.875rem, inherit );
+
+                        @include text( $up );
+
+                        // white
+                        .white {
+
+                            @include color( white );
+
+                        }
+
+                        // green
+                        .green {
+
+                            @include color( $cvellow );
+
+                        }
+
+                    }
+
+                    // subheadline
+                    .subheadline {
+
+                        @include font( $industry, 0.875rem, 600 );
+
+                    }
+
+                }
+
+            }
+
+            // quick links
+            #billboard_quicklinks {
+
+                position: absolute;
+
+                top: 2rem;
+                right: 2rem;
+
+                z-index: 100;
+
+                // common
+                .quicklink {
+
+                    position: relative;
+
+                    @include flex-h-s-v-c( true );
+
+                    height: 2rem;
+                    padding: 0.1875rem 1rem 0 2.5rem;
+
+                    @include font( $industry, 0.6875rem, 700 );
+
+                    @include typo( 0.4375rem, 0.055em );
+
+                    @include text( $up );
+
+                    @include color( white );
+
+                    @include fill( $g135 );
+
+                    @include shadowbox( 1rem, 2.5rem, black, 0.425 );
+
+                    transition: $all220;
+
+                    // before
+                    &:before {
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0.25rem;
+
+                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, white, '\E90D' );
+
+                    }
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( $g140 );
+
+                    }
+
+                }
+
+                // pay bill
+                #pay_bill {
+
+                    // before
+                    &:before {
+
+                        content: '\EA15';
+
+                    }
+
+                }
+
+                // results
+                #view_results {
+
+                    // before
+                    &:before {
+
+                        content: '\EC52';
+
+                    }
+
+                    margin: 0 0 0 1rem;
+
+                }
+
+            }
+
+            // sidebar
+            &.sidebar {
+
+                @include flex-v-t-h-st( false );
+
+                width: 35%;
+                padding: 2rem 2rem 0 2rem;
+
+                @include fill( darken( $beige, 7.5% ) );
+
+                // buttons
+                .sidebar_button {
+
+                    @include flex-v-b-h-s( false );
+
+                    margin: 0 0 2rem 0;
+                    padding: 4rem 2rem 2rem 2rem;
+
+                    @include text( normal, left, none );
+
+                    @include color( white );
+
+                    @include fill( $g135 );
+
+                    @include shadowbox( 1rem, 3rem, black, 0.655 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( $g140, 0.085 );
+
+                    }
+
+                    // common
+                    .button_text {
+
+                        // title
+                        &.title {
+
+                            margin: 0 0 0.5rem 0;
+
+                            @include font( $klavislim, 1.5rem, 400 );
+
+                            @include typo( 1.5rem, 0.045em );
+
+                            @include text( $up );
+
+                            @include color( $beige );
+
+                        }
+
+                        // text
+                        &.description {
+
+                            @include font( $industry, 0.75rem, 600 );
+
+                            @include typo( inherit, 0.055em );
+
+                            @include color( white, 0.000 );
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
