@@ -7,69 +7,79 @@
 <!-- about -->
 <div class="homepage_section contact">
 
-    <div class="contact_entry phone">
+    <div class="contact_info">
 
-        <span class="entry_text label">
+        <div class="contact_entry phone">
 
-            phone:
+            <span class="entry_text label">
 
-        </span>
+                phone:
 
-        <span class="entry_text content">
+            </span>
 
-            (970) 297-1281
+            <span class="entry_text content">
 
-        </span>
+                (970) 297-1281
+
+            </span>
+
+        </div>
+
+        <div class="contact_entry email">
+
+            <span class="entry_text label">
+
+                e-mail:
+
+            </span>
+
+            <span class="entry_text content">
+
+                dlab@colostate.edu
+
+            </span>
+
+        </div>
+
+        <div class="contact_entry shipping">
+
+            <span class="entry_text label">
+
+                fedex &amp; ups shipping address:
+
+            </span>
+
+            <span class="entry_text content">
+
+                2450 Gillette Drive, Fort Collins, CO 80526
+
+            </span>
+
+        </div>
+
+        <div class="contact_entry usps">
+
+            <span class="entry_text label">
+
+                usps shipping address:
+
+            </span>
+
+            <span class="entry_text content">
+
+                200 West Lake Street, 1644 Campus Delivery, Fort Collins, CO 80523-1644
+
+            </span>
+
+        </div>
 
     </div>
 
-    <div class="contact_entry email">
-
-        <span class="entry_text label">
-
-            e-mail:
-
-        </span>
-
-        <span class="entry_text content">
-
-            dlab@colostate.edu
-
-        </span>
-
-    </div>
-
-    <div class="contact_entry shipping">
-
-        <span class="entry_text label">
-
-            fedex &amp; ups shipping address:
-
-        </span>
-
-        <span class="entry_text content">
-
-            2450 Gillette Drive, Fort Collins, CO 80526
-
-        </span>
-
-    </div>
-
-    <div class="contact_entry usps">
-
-        <span class="entry_text label">
-
-            usps shipping address:
-
-        </span>
-
-        <span class="entry_text content">
-
-            200 West Lake Street, 1644 Campus Delivery, Fort Collins, CO 80523-1644
-
-        </span>
-
-    </div>
+    <a id="contact_button" href="#">
+        
+        view all contact information
+    
+    </a>
 
 </div>
 <!-- END about -->

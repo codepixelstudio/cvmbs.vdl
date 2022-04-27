@@ -6,24 +6,34 @@
     // styles
     .homepage_section {
 
-        // contact
+        // contact wrapper
         &.contact {
 
-            padding: 3rem 5rem 3rem 5rem;
+            @include flex-h-j-v-c( false )
+
+            padding: 2rem 2rem 2rem 2rem;
 
             @include fill( $beige );
+
+        }
+
+        // contact entries
+        .contact_info {
+
+            @include flex-h-s-v-st( false );
 
             // buttons
             .contact_entry {
 
                 position: relative;
 
-                @include flex-v-c-h-s( true );
+                @include flex-v-c-h-st( true );
 
+                height: 3rem;
                 margin: 0 2rem 0 0;
                 padding: 0 0 0 2.25rem;
 
-                @include color( $app05, 0.165 );
+                // @include fill( red, 0.565 );
 
                 // before
                 &:before {
@@ -38,10 +48,14 @@
 
                     content: '';
 
-                    width: 2rem;
-                    height: 2rem;
+                    // width: 3rem;
+                    // height: 3rem;
 
-                    @include codicon( 2rem, 2rem, 0.5rem 0 0 0, 1.5rem, inherit, inherit );
+                    @include codicon( 2rem, 3rem, 0.5rem 0 0.5rem 0, 1.5rem, inherit, inherit );
+
+                    @include typo( 2rem, 0.000em );
+
+                    // @include fill( $blue, 0.565 );
 
                 }
 
@@ -111,18 +125,56 @@
 
                         @include text( $up );
 
+                        @include color( $app05, 0.365 );
+
                     }
 
                     // content
                     &.content {
 
-                        @include font( $klavislim, 1rem, 400 );
+                        @include font( $klavislim, 0.875rem, 500 );
 
-                        @include typo( 1rem, 0.035em );
+                        @include typo( 1rem, 0.025em );
+
+                        @include color( $app05, 0.165 );
 
                     }
 
                 }
+
+            }
+
+        }
+
+        // contact button
+        #contact_button {
+
+            @include flex-h-c-v-c( true );
+
+            align-self: flex-end;
+
+            height: 3rem;
+            margin: 0 0 0 0;
+            padding: 0.125rem 2rem 0 2rem;
+
+            @include font( $klavislim, 1rem, 400 );
+
+            @include text( $up );
+
+            @include typo( 0.875rem, 0.035em );
+
+            @include color( $beige );
+
+            @include fill( $g135 );
+
+            @include shadowbox( 1rem, 2.5rem, black, 0.565 );
+
+            transition: $all220;
+
+            // hover
+            &:hover {
+
+                @include fill( $g140 );
 
             }
 
