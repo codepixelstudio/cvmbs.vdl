@@ -1,0 +1,108 @@
+// stylesheet :: custom VDL footer styles
+
+    // settings
+    $footer : 1rem;
+
+    // styles
+    #site-footer {
+
+        // ID hook
+        #footer-top {
+
+            .contact-info {
+
+                @include flex-v-t-h-s( false );
+        
+                flex-grow: 0;
+        
+                width: 100%;
+                margin: 0 0 1rem 0;
+        
+                & > * {
+                    max-width: 100%;
+                }
+        
+                // labels
+                .contact_label {
+        
+                    @include flex-h-s-v-c( false );
+        
+                    height: 1rem;
+                    margin: 0 0 0.25rem 0;
+        
+                    @include font( $industry, 0.5625rem, 700 );
+        
+                    @include typo( 0.625rem, 0.115em );
+        
+                    @include text( $up );
+        
+                    @include color( white, 0.185 );
+        
+                }
+        
+                // text
+                .contact_text {
+        
+                    // @include flex-h-s-v-c( false );
+        
+                    margin: 0 0 0.75rem 0;
+        
+                    @include font( $industry, 0.6875rem, 600 );
+        
+                    text-decoration: none;
+        
+                    @include typo( 0.875rem, 0.065em );
+        
+                    @include color( white, 0.485 );
+        
+                    span {
+        
+                        display: block;
+        
+                        // address 
+                        &.address {
+        
+                            margin: 0 0 0.5rem 0;
+        
+                        }
+        
+                    }
+        
+                    a {
+        
+                        display: block;
+        
+                        margin: 0.5rem 0 0 0;
+        
+                        color: inherit;
+        
+                        &:visited {
+        
+                            color: inherit;
+        
+                        }
+        
+                        &:hover,
+                        &:focus,
+                        &:active {
+        
+                            color: $gold;
+        
+                        }
+        
+                    }
+        
+                }
+        
+            }
+
+        }
+
+    }
+
+    // campaign button
+    #campaign-button {
+
+        width: 100%;
+
+    }

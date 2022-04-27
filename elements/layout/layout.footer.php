@@ -107,13 +107,37 @@
 
                 <h2 class="links-header">
 
-                    custom footer layout
-
-                    <?php echo $right_menu_name; ?>
+                    branch lab contact information
 
                 </h2>
 
-                <?php footer_right_menu(); ?>
+                <div class="contact-info">
+
+                <?php
+
+                    $branch_lab_contact = get_field( 'vdl_contact_info', 'options' );
+
+                ?>
+
+                <?php foreach ( $branch_lab_contact as $contact ) : ?>
+
+                    <small class="contact_label">
+                        
+                        <?php echo $contact[ 'branch_lab_title' ]; ?>
+
+                    </small>
+
+                    <span class="contact_text">
+                        
+                        <span class="address"><?php echo $contact[ 'branch_lab_address' ]; ?></span>
+                        <span class="phone"><?php echo $contact[ 'branch_lab_phone' ]; ?></span>
+                        <a href="mailto:<?php echo $contact[ 'branch_lab_email' ]; ?>"><?php echo $contact[ 'branch_lab_email' ]; ?></a>
+
+                    </span>
+
+                <?php endforeach; ?>
+
+                </div>
 
             </section>
             <!-- END links.column -->
@@ -151,7 +175,7 @@
 
                     <small class="contact-label">
 
-                        phone
+                        phone/fax
 
                     </small>
 
@@ -160,6 +184,32 @@
                         <?php echo $footer_contact_info[ 'phone' ]; ?>
 
                     </span>
+
+                    <?php
+
+                        $social_media_links = $footer_contact_info[ 'social_media_links' ];
+
+                    ?>
+
+                    <?php if ( $site_type == 'special' ) : ?>
+
+                    <?php if ( $social_media_links ) : ?>
+
+                    <small class="contact-label">
+
+                        connect on social media
+
+                    </small>
+
+                    <div class="social-media-links">
+
+                        <?php get_template_part( 'elements/buttons/buttons.social.media.special' ); ?>
+
+                    </div>
+
+                    <?php endif; ?>
+
+                    <?php else : ?>
 
                     <small class="contact-label">
 
@@ -173,7 +223,30 @@
 
                     </div>
 
+                    <?php endif; ?>
+
                 </div>
+
+                <?php
+
+                    $support_button = get_field( 'support_button', 'options' );
+                    $custom_button_option = $support_button[ 'custom_button_option' ];
+                    $custom_text = $support_button[ 'custom_text' ];
+                    $custom_link = $support_button[ 'custom_link' ];
+
+                ?>
+
+                <?php if ( $custom_button_option ) : ?>
+
+                <!-- campaign button -->
+                <a id="campaign-button" class="campaign-button" href="<?php echo $custom_link; ?>">
+
+                    <span class="text"><?php echo $custom_text; ?></span>
+
+                </a>
+                <!-- END campaign button -->
+
+                <?php else : ?>
 
                 <!-- campaign button -->
                 <a id="campaign-button" class="campaign-button" href="https://advancing.colostate.edu/CVMBS">
@@ -182,6 +255,8 @@
 
                 </a>
                 <!-- END campaign button -->
+
+                <?php endif; ?>
 
             </section>
             <!-- END links.column -->
