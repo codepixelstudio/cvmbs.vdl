@@ -22,7 +22,7 @@
 ?>
 
 <!-- special.billboard -->
-<section id="special-billboard" class="ui-billboard pattern vdl" tabindex="-1">
+<section id="special_billboard" class="ui-billboard pattern vdl" tabindex="-1">
 
     <!-- billboard -->
     <div class="billboard_component main" style="background-image:url(<?php echo $vdl_billboard; ?>);">

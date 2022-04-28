@@ -10,6 +10,8 @@
 
     <?php get_template_part( 'elements/layout/layout.billboard' ); ?>
 
+    <?php get_template_part( 'elements/layout/layout.search.build' ); ?>
+
     <?php get_template_part( 'elements/layout/layout.contact' ); ?>
 
     <?php // get_template_part( 'elements/layout/layout.about' ); ?>

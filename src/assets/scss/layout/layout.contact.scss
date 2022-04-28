@@ -9,7 +9,7 @@
         // contact wrapper
         &.contact {
 
-            @include flex-h-j-v-c( false )
+            @include flex-h-j-v-c( false );
 
             padding: 2rem 2rem 2rem 2rem;
 
