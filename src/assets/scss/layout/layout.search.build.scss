@@ -1,0 +1,219 @@
+// ========================================================================================================================
+// STYLESHEET :: test procedure search styles
+// ========================================================================================================================
+
+    // settings
+    $search : 1rem;
+
+    // styles
+    #search_procedure_database {
+
+        position: relative;
+
+        z-index: 100;
+
+        width: 100%;
+
+        @include flex-h-j-v-c( false );
+
+        @include fill( $dark, 0.000 );
+
+        background: {
+
+            image:
+
+                linear-gradient(
+                    
+                    90deg,
+                    transparentize( $g140, 0.345 ) 0%,
+                    transparentize( transparent, 1.000 ) 60%
+
+                )
+                
+            ;
+
+        }
+
+        // background-image: none;
+
+        // results
+        #search_results {
+
+            width: 65%;
+
+            padding: 2rem 0 2rem 2rem;
+
+            // visibility: hidden;
+
+            span {
+
+                @include flex-h-s-v-c( false );
+
+                height: 3rem;
+                padding: 0 0 0 1.5rem;
+
+                @include fill ( white, 0.965 );
+
+                @include shadowbox( 1rem, 2rem, black, 0.565 );
+
+            }
+
+        }
+
+        // search box
+        #search_field {
+
+            @include flex-h-e-v-c( false );
+
+            width: 35%;
+            padding: 2rem 2rem 2rem 2rem;
+
+            // form
+            #search_database_form {
+
+                @include flex-h-j-v-s( false );
+
+                width: 100%;
+
+                @include fill( $dark, 0.000 );
+
+                @include shadowbox( 1rem, 2rem, black, 0.565 );
+
+            }
+
+            // fields
+            input {
+
+                display: inline-block;
+
+                height: 3rem;
+                margin: 0 0 0 0;
+
+                border: none;
+
+                // text
+                &[type='text'] {
+
+                    width: calc( 100% - 3rem );
+                    padding: 0.0625rem 1rem 0 1rem;
+
+                    border: 1px solid transparent;
+
+                    @include font( $industry, 0.875rem, 600 );
+
+                    @include typo( 0.75rem, 0.045em );
+
+                    @include color( white );
+
+                    @include fill( white, 0.915 );
+                    // @include fill( $dark, 0.000 );
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( white, 0.765 );
+
+                    }
+
+                    // focus state
+                    &:focus {
+
+                        // padding: 0.0625rem 1rem 0 1rem;
+
+                        border: 1px solid $roarange;
+
+                        @include fill( white, 0.865 );
+
+                        outline: none;
+
+                        &::placeholder {
+
+                            font-style: normal;
+
+                            @include color ( white, 0.465 );
+
+                        }
+
+                    }
+
+                    // placeholder
+                    &::placeholder {
+
+                        @include font( $industry, 0.875rem, 600, italic );
+
+                        @include typo( 0.75rem, 0.045em );
+
+                        @include color( $app05, 0.325 );
+                        @include color( white );
+
+                    }
+
+                }
+
+                // submit
+                &[type='submit'] {
+
+                    position: relative;
+
+                    display: block;
+
+                    width: 3rem;
+                    height: 3rem;
+                    padding: 0.125rem 1rem 0 1rem;
+
+                    overflow: hidden;
+
+                    @include font( $industry, 0.6875rem, 700 );
+
+                    @include text( $up, center );
+
+                    @include typo( 0.75rem, 0.035em );
+
+                    @include color( white );
+
+                    @include fill( darken( $roarange, 10% ) );
+                    @include fill( $roarange );
+
+                    text-indent: -9999rem;
+
+                    background: {
+
+                        image: url(../img/icons/icon_search_folder.svg);
+                        repeat: no-repeat;
+                        size: 3rem 3rem;
+
+                    }
+
+                    transition: $all220;
+
+                    // hover state
+                    &:hover {
+
+                        @include fill( $roarange );
+
+                    }
+
+                    // before
+                    &:before {
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0.25rem;
+
+                        z-index: 100;
+
+                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, white, '\E90D' );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

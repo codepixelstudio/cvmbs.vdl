@@ -1,4 +1,6 @@
-// stylesheet :: contact info styles
+// ========================================================================================================================
+// STYLESHEET :: contact info styles
+// ========================================================================================================================
 
     // settings
     $contact : 1rem;
@@ -166,6 +168,7 @@
             @include color( $beige );
 
             @include fill( $g135 );
+            @include fill( $blue );
 
             @include shadowbox( 1rem, 2.5rem, black, 0.565 );
 

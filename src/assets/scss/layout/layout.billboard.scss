@@ -1,4 +1,6 @@
-// stylesheet :: VTH billboard layout styles
+// ========================================================================================================================
+// STYLESHEET :: VDL billboard layout styles
+// ========================================================================================================================
 
     // settings
     $billboard : 100vh;
@@ -157,9 +159,10 @@
 
                     @include text( $up );
 
-                    @include color( white );
+                    @include color( $g135 );
 
                     @include fill( $g135 );
+                    @include fill( $campaign, 0.165 );
 
                     @include shadowbox( 1rem, 2.5rem, black, 0.425 );
 
@@ -174,14 +177,25 @@
                         bottom: 0;
                         left: 0.25rem;
 
-                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, white, '\E90D' );
+                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, $g135, '\E90D' );
+
+                        transition: $all220;
 
                     }
 
                     // hover state
                     &:hover {
 
-                        @include fill( $g140 );
+                        @include color( $campaign );
+
+                        @include fill( $g135 );
+
+                        // before
+                        &:before {
+
+                            @include color( $campaign );
+
+                        }
 
                     }
 

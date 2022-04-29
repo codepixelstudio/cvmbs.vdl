@@ -1,0 +1,57 @@
+// stylesheet :: developer UI styles
+
+    // settings
+    $developer: 1rem;
+
+    // styles
+    .developer_container {
+
+        min-height: 100vh;
+        padding: 10rem 5rem 5rem 5rem;
+
+        // headings
+        h2 {
+
+            @include color( $campaign );
+
+        }
+
+        // list
+        ul {
+
+            margin: 0 0 0 1rem;
+
+        }
+
+        // preformatted
+        pre {
+
+            @include hide;
+
+        }
+
+    }
+
+    // body adjustments
+    .page-template-developer {
+
+        // gradient
+        #site-layout {
+
+            background: {
+
+                attachment: fixed;
+
+            }
+
+            // @include gradient(
+
+                // 90deg,
+                // red, 0.000, 0%,
+                // transparent, 1.000, 100%
+
+            // );
+
+        }
+
+    }

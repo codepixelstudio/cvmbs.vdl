@@ -81,8 +81,6 @@
         </div>
         <!-- END text content -->
 
-        <?php get_template_part( 'elements/layout/layout.search' ); ?>
-
     </div>
     <!-- END billboard -->
 
