@@ -159,10 +159,9 @@
 
                     @include text( $up );
 
-                    @include color( $g135 );
+                    @include color( white );
 
-                    @include fill( $g135 );
-                    @include fill( $campaign, 0.165 );
+                    @include fill( $g140 );
 
                     @include shadowbox( 1rem, 2.5rem, black, 0.425 );
 
@@ -177,7 +176,7 @@
                         bottom: 0;
                         left: 0.25rem;
 
-                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, $g135, '\E90D' );
+                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, $cvellow, '\E90D' );
 
                         transition: $all220;
 
@@ -186,14 +185,14 @@
                     // hover state
                     &:hover {
 
-                        @include color( $campaign );
+                        @include color( white );
 
-                        @include fill( $g135 );
+                        @include fill( $cvellow, 0.265 );
 
                         // before
                         &:before {
 
-                            @include color( $campaign );
+                            @include color( $g140 );
 
                         }
 
@@ -249,18 +248,73 @@
 
                     @include text( normal, left, none );
 
-                    @include color( white );
-
                     @include fill( $g135 );
 
                     @include shadowbox( 1rem, 3rem, black, 0.655 );
 
                     transition: $all220;
 
+                    // progressive color
+                    &:nth-of-type( 1 ) {
+
+                        @include fill ( $dark );
+
+                        // title
+                        .button_text.title {
+
+                            // icon
+                            &:before {
+
+                                content: '\ED72';
+
+                            }
+
+                        }
+
+                    }
+
+                    // progressive color
+                    &:nth-of-type( 2 ) {
+
+                        @include fill ( $g135 );
+
+                        // title
+                        .button_text.title {
+
+                            // icon
+                            &:before {
+
+                                content: '\EC55';
+
+                            }
+
+                        }
+
+                    }
+
+                    // progressive color
+                    &:nth-of-type( 3 ) {
+
+                        @include fill ( $g140 );
+
+                        // title
+                        .button_text.title {
+
+                            // icon
+                            &:before {
+
+                                content: '\EA35';
+
+                            }
+
+                        }
+
+                    }
+
                     // hover state
                     &:hover {
 
-                        @include fill( $g140, 0.085 );
+                        @include fill( $cvnavy );
 
                     }
 
@@ -270,7 +324,10 @@
                         // title
                         &.title {
 
+                            position: relative;
+
                             margin: 0 0 0.5rem 0;
+                            padding: 0 0 0 1.5rem;
 
                             @include font( $klavislim, 1.5rem, 400 );
 
@@ -279,6 +336,19 @@
                             @include text( $up );
 
                             @include color( $beige );
+                            @include color ( $cvellow );
+
+                            // icon
+                            &:before {
+
+                                @include codicon ( 1rem, 1rem, 0, 1rem, transparentize( white, 0.365 ), '\EC4C' );
+
+                                position: absolute;
+
+                                top: 0.1875rem;
+                                left: 0;
+
+                            }
 
                         }
 
