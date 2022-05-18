@@ -1,18 +1,19 @@
-<?php // Template Name: Developer Page ?>
-
-<?php
+<?php // ========================================================================================================================
+// Template Name: Developer Page
+// script :: test procedure database -> dynamic search functionality
 
     // set testproc URL
-    $testProcURL = 'https://vdlexternal.cvmbs.colostate.edu/api/PriceListApi/GetPriceListResults';
+    $procedureStore = $_SERVER[ 'DOCUMENT_ROOT' ] . '/wp-content/themes/vdl/data/procedures.json';
+    $procedureStore = 'https://vdlexternal.cvmbs.colostate.edu/api/PriceListApi/GetPriceListResults';
 
     // test price list
-    $testProcData = json_decode( file_get_contents( $testProcURL ) );
+    $procedureData = json_decode( file_get_contents( $procedureStore ) );
 
     // top level object
-    $testList = $testProcData->Results->TestPriceList;
+    $procedureList = $procedureData->Results->TestPriceList;
 
     // count
-    $results = count( $testList );
+    $proof = count( $procedureList );
 
 ?>
 
@@ -30,35 +31,117 @@
     		<!-- article -->
     		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                <h2>Test Procedure API Results&nbsp;[ <?php echo $results; ?> ]</h2>
+                <h2>Test Procedure API Results&nbsp;[ <?php echo $proof; ?> ]</h2>
 
-                <ul>
+                <?php // print_r( $membersdata ); ?>
 
-                    <?php
+                <!-- toolbar.DEV -->
+                <div id="procedures_toolbar" class="toolbar">
 
-                        // setup output
-                        foreach ( $testList as $testListItem ) {
+                    <!-- fields -->
+                    <div id="procedures_fields" class="toolbar-control-group">
 
-                            $testName = $testListItem->TestName;
-                            $testPrice = $testListItem->Cost;
 
-                            echo '<li>' . $testName . ' - ' . $testPrice . '</li>';
 
-                        }
+                    </div>
+                    <!-- END fields -->
 
-                    ?>
+                </div>
+                <!-- END toolbar.DEV -->
 
-                </ul>
+                <!-- table -->
+                <table id="test_procedures" class="procedures dt-responsive">
 
-                <pre>
+                    <!-- sortable header -->
+                    <thead>
 
-                    <?php
+                        <tr>
 
-                        print_r( $testProcData );
+                            <th data-priority="1">
 
-                    ?>
+                                Test Name
 
-                </pre>
+                            </th>
+
+                            <th>
+
+                                Species
+
+                            </th>
+
+                            <th data-priority="10000">
+
+                                Price
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+                    <!-- END sortable header -->
+
+                    <!-- data table -->
+                    <tbody>
+
+                        <?php
+
+                            // empty variable
+                            $results = '';
+
+                            foreach ( $procedureList as $procedure ) {
+                                
+                                // basic name
+                                $testName    = $procedure->TestName;
+
+                                // extract and build URL
+                                $testQuery   = $procedure->TestInfoFormattedQueryString;
+                                $testURL     = str_replace( array( 'N/A[split]', 'Available[split]' ), '', $testQuery );
+
+                                // extract and build species list
+                                $speciesList = $procedure->SpeciesList;
+                                
+                                if ( !$speciesList ) {
+
+                                    $testSpecies = $procedure->Species;
+
+                                } else {
+
+                                    $testSpecies = $procedure->SpeciesList;
+
+                                }
+
+                                // test price
+                                $testPrice   = $procedure->Cost;
+
+                                $results .= '<tr class="procedure"><td class="link_column"><a class="procedure_link" target="_blank" href="https://vdlexternal.cvmbs.colostate.edu/PriceList/TestInfo' . $testURL . '">' . $testName . '</a></td><td>' . $testSpecies . '</td><td class="link_column">' . $testPrice . '</td></tr>';
+
+                            }
+
+                            echo $results;
+
+                        ?>
+
+                    </tbody>
+                    <!-- END data table -->
+
+                </table>
+                <!-- END table -->
+
+                <!-- pagination -->
+                <div id="procedures_controls" class="toolbar">
+
+                    
+
+                </div>
+                <!-- END pagination -->
+
+                <!-- info -->
+                <div id="procedures_info" class="toolbar">
+
+
+
+                </div>
+                <!-- END info -->
 
             </article>
     		<!-- #post-<?php the_ID(); ?> -->

@@ -60,6 +60,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
         // Enqueue Foundation scripts
 		wp_enqueue_script( 'local', get_stylesheet_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path( 'cvmbs.vdl.app.js' ), array( 'jquery' ), '1.0.0', true );
+
 	}
 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );

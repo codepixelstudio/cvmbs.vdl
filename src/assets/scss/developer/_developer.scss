@@ -23,10 +23,563 @@
 
         }
 
+        // links
+        a {
+
+            color: white;
+
+        }
+
         // preformatted
         pre {
 
-            @include hide;
+            // @include hide;
+
+        }
+
+        // common toolbar
+        .toolbar {
+
+            height: 5rem;
+
+        }
+
+        // toolbar
+        #procedures_toolbar {
+
+            height: 3rem;
+            margin: 0 0 2rem;
+
+            @include font( $industry, 0.875rem, 600 );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                height: auto;
+
+            }
+
+        }
+
+        // table
+        .procedures {
+
+            width: 100% !important;
+
+            @include font( $industry, 0.875rem, 600 );
+
+            // header
+            thead {
+
+                @include fill( $g135, 0.000 );
+
+                // row
+                tr {
+
+                    height: 2rem;
+
+                }
+
+                // head
+                th {
+
+                    padding: 0.125rem 0.75rem 0 0.75rem;
+
+                }
+
+            }
+
+            // row
+            .procedure {
+
+                height: 2rem;
+
+                @include font( $industry, 0.875rem, 600 );
+
+                @include typo( inherit, -0.005em );
+
+                transition: all 320ms $outex 0ms;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    position: relative;
+
+                    // icons
+                    &:before,
+                    &:after {
+
+                        position: absolute;
+
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+
+                        @include flex-v-c-h-c( false );
+
+                        @include codicon( 1.5rem, 2.3125rem, 0.6875rem 0 0.4375rem 0.5rem, 0.5rem, $blue, inherit );
+
+                        transition: all 220ms linear 0ms;
+
+                    }
+
+                    // before
+                    &:before {
+
+                        // content: '\ED5B';
+
+                        opacity: 1.000;
+
+                    }
+
+                    // after
+                    &:after {
+
+                        // content: '\ED5C';
+
+                        opacity: 0.000;
+
+                    }
+
+                }
+
+                // hover state
+                &:hover {
+
+                    @include color ( white, 0.000 );
+
+                    @include fill ( $campaign, 0.145 );
+
+                    cursor: pointer;
+
+                    @include shadowbox ( 1rem, 2rem, black, 0.685 );
+
+                }
+
+                // common
+                .procedure_link {
+
+                    display: block;
+
+                    // padding: 0.5625rem 0.75rem 0.4375rem 0.75rem;
+                    padding: 0.125rem 0.75rem 0rem 0.75rem;
+
+                    text-decoration: none;
+
+                }
+
+            }
+
+            // column
+            .link_column {
+
+                padding: 0;
+
+            }
+
+            // child row (mobile)
+            tr.child {
+
+                @include fill( $g140, 0.000 );
+
+                // list
+                .dtr-details {
+
+                    @include font( $industry, 0.75rem, 600 );
+
+                    @include color( white, 0.000 );
+
+                    // link
+                    a {
+
+                        @include color( $campaign, 0.000 );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // control group
+        #procedures_fields {
+
+            @include flex-h-j-v-c( false );
+
+        }
+
+        // control group
+        #procedures_info {
+
+            height: 3rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include font( $industry, 0.6875rem, 700 );
+
+            }
+
+        }
+
+        // control directory view(s)
+        .dataTables_filter {
+
+            @include flex-h-s-v-c( false );
+
+            height: 2rem;
+
+            // label
+            label {
+
+                position: relative;
+
+                // width: 18rem;
+                height: 2rem;
+                margin: 0 0 0 0;
+                padding: 0 0 0 0;
+
+                // overflow: hidden;
+
+                // text-indent: -9999em;
+
+                transition: $all220;
+
+                // icon
+                &:before {
+
+                    position: absolute;
+
+                    z-index: 100;
+
+                    // @include codicon( 2rem, 2rem, 0.5rem, 1rem, white, '\EF0F' );
+
+                    text-indent: 0;
+
+                    @include fill ( $roarange, 0.000 );
+
+                }
+
+            }
+
+            // input
+            input {
+
+                @include flex-h-s-v-c( true );
+
+                width: 16rem;
+                height: 2rem;
+                margin: 0 0 0 0.75rem;
+                padding: 0 0.5rem 0 0.5rem;
+
+                border: 1px solid transparent;
+
+                @include font( $industry, 0.75rem, 600 );
+
+                @include typo ( 0.5rem, 0.045em );
+
+                @include color( white, 0.000 );
+
+                @include fill( white, 0.965 );                
+
+                transition: $all220;
+
+                // focus state
+                &:focus {
+
+                    border: 1px solid $roarange;
+
+                    @include fill( white, 0.865 );
+
+                    @include shadowbox( 1rem, 2rem, black, 0.565 );
+
+                    outline: none;
+
+                    &::placeholder {
+
+                        font-style: normal;
+
+                        @include color ( white, 0.465 );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // control directory view(s)
+        .dataTables_length {
+
+            @include flex-h-j-v-c( true );
+
+            height: 3rem;
+
+            // label
+            label {
+
+                @include flex-h-j-v-c( true );
+
+            }
+
+            // select
+            select {
+
+                @include flex-h-e-v-c( true );
+
+                // width: 3rem;
+                height: 2rem;
+                margin: 0 0.5rem 0 0.5rem;
+                padding: 0 0.25rem 0 0.5rem;
+
+                border: 1px solid transparent;
+                border-radius: 0px;
+
+                @include font( $industry, 0.875rem, 700 );
+
+                @include text( none, center );
+
+                @include color( white, 0.000 );
+
+                @include fill( white, 0.965 );
+
+                transition: $all220;
+
+                // focus
+                &:focus {
+
+                    border-color: $roarange;
+
+                    outline: none;
+
+                    @include shadowbox( 1rem, 2rem, black, 0.565 );
+
+                }
+
+            }
+
+        }
+
+        // directory info
+        .dataTables_info {
+
+            @include flex-h-c-v-c( false );
+
+            float: none;
+
+            height: 3rem;
+
+        }
+
+        // pagination
+        #procedures_controls {
+
+            @include flex-h-c-v-c( false );
+
+            height: 5rem;
+
+            @include font( $industry, 0.875rem, 600 );
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                height: 3rem;
+
+            }
+
+            // pagination controls
+            .dataTables_paginate {
+
+                @include flex-h-c-v-c( false );
+
+                width: 50%;
+
+                // mobile
+                @include breakpoint ( small only ) {
+
+                    width: 100%;
+
+                }
+
+                // directions
+                .dataTables_previous,
+                .dataTables_next {
+
+                    // disabled
+                    &.disabled {
+
+                        // hover state
+                        &:hover {
+
+                            @include fill( white, 0.000 );
+
+                        }
+
+                    }
+
+                }
+
+                // ellipsis
+                .ellipsis {
+
+                    @include flex-v-c-h-c( true );
+
+                    padding: 0 0.5rem 0 0.5rem;
+
+                }
+
+                // button
+                .paginate_button {
+
+                    @include flex-v-c-h-c( true );
+
+                    min-width: 3rem;
+                    height: 3rem;
+                    margin: 0 0 0 0;
+                    padding: 0 0.5rem 0 0.5rem;
+
+                    @include color( $app05, 0.265 );
+
+                    color: transparentize( white, 0.000 ) !important;
+
+                    text-decoration: none;
+
+                    transition: all 320ms $outex 0ms;
+
+                    // hover state
+                    &:hover {
+
+                        @include color( white, 0.000 );
+
+                        color: white !important;
+
+                        @include fill( $campaign, 0.000 );
+
+                    }
+
+                    // disabled state
+                    &.disabled {
+
+                        @include color( $app05, 0.625 );
+
+                        color: transparentize( white, 0.625 ) !important;
+
+                        // hover state
+                        &:hover {
+
+                            color: transparentize( white, 0.625 ) !important;
+
+                            @include fill( transparent, 1.000 );
+
+                        }
+
+                    }
+
+                    // current state
+                    &.current {
+
+                        @include color( white, 0.000 );
+
+                        color: $campaign !important;
+
+                        @include fill( white, 0.965 );
+
+                        transition: all 320ms $outex 0ms;
+
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+
+                        min-width: 1.5rem;
+                        height: 1.5rem;
+                        padding: 0.0625rem 0.5rem 0 0.5rem;
+
+                        @include font( $industry, 0.75rem, 700 );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        // filters
+        #procedures_filters {
+
+            @include flex-h-e-v-c( false );
+
+            height: 5rem;
+
+            // label
+            .filter-label {
+
+                @include flex-h-c-v-c( true );
+
+                height: 2rem;
+                margin: 0 0.5rem 0 0;
+                padding: 0.125rem 1rem 0 1rem;
+
+                @include font( $industry, 0.75rem, 700 );
+
+                @include color( white, 0.365 );
+
+                @include fill( $app05, 0.915 );
+
+            }
+
+            // buttons
+            .filter-link {
+
+                @include flex-h-c-v-c( true );
+
+                height: 2rem;
+                margin: 0 0.5rem 0 0.5rem;
+                padding: 0.125rem 1rem 0 1rem;
+
+                @include font( $industry, 0.75rem, 700 );
+
+                text-decoration: none;
+
+                @include typo( 0.5rem, 0.025em );
+
+                @include color( $g135, 0.000 );
+
+                @include fill( $g135, 0.865 );
+
+                transition: all 220ms linear 0ms;
+
+                // hover state
+                &:hover {
+
+                    @include color( white, 0.000 );
+
+                    @include fill( $g135, 0.000 );
+
+                }
+
+                // all members
+                &.all {
+
+                    @include color( $roarange, 0.000 );
+
+                    @include fill( $roarange, 0.865 );
+
+                    // hover state
+                    &:hover {
+
+                        @include color( white, 0.000 );
+
+                        @include fill( $roarange, 0.000 );
+
+                    }
+
+                }
+
+            }
 
         }
 

@@ -161,7 +161,7 @@
 
                     @include color( white );
 
-                    @include fill( $g140 );
+                    @include fill( $g140, 0.135 );
 
                     @include shadowbox( 1rem, 2.5rem, black, 0.425 );
 
@@ -187,12 +187,12 @@
 
                         @include color( white );
 
-                        @include fill( $cvellow, 0.265 );
+                        @include fill( lighten( $g140, 5% ), 0.000 );
 
                         // before
                         &:before {
 
-                            @include color( $g140 );
+                            // @include color( $g140 );
 
                         }
 
@@ -335,13 +335,14 @@
 
                             @include text( $up );
 
-                            @include color( $beige );
-                            @include color ( $cvellow );
+                            @include color( white );
+                            // @include color ( $cvellow );
 
                             // icon
                             &:before {
-
+                                
                                 @include codicon ( 1rem, 1rem, 0, 1rem, transparentize( white, 0.365 ), '\EC4C' );
+                                @include codicon ( 1rem, 1rem, 0, 1rem, $cvellow, '\EC4C' );
 
                                 position: absolute;
 
@@ -359,7 +360,7 @@
 
                             @include typo( inherit, 0.055em );
 
-                            @include color( white, 0.000 );
+                            @include color( white, 0.235 );
 
                         }
 
