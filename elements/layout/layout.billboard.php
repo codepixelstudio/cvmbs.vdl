@@ -87,59 +87,27 @@
     <!-- sidebar -->
     <div class="billboard_component sidebar">
 
+        <?php foreach ( $sidebar_buttons as $sidebar_button ): ?>
+
         <!-- link -->
-        <a class="sidebar_button" href="#">
+        <a class="sidebar_button" href="<?php echo $sidebar_button[ 'button_link' ]; ?>">
 
             <span class="button_text title">
 
-                how to submit a sample
+                <?php echo $sidebar_button[ 'button_title' ]; ?>
 
             </span>
 
             <span class="button_text description">
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
+                <?php echo $sidebar_button[ 'button_text' ]; ?>
 
             </span>
 
         </a>
         <!-- END link -->
 
-        <!-- link -->
-        <a class="sidebar_button" href="#">
-
-            <span class="button_text title">
-
-                find a form
-
-            </span>
-
-            <span class="button_text description">
-
-                Excepteur sint occaecat cupidatat non proident
-
-            </span>
-
-        </a>
-        <!-- END link -->
-
-        <!-- link -->
-        <a class="sidebar_button" href="#">
-
-            <span class="button_text title">
-
-                shipping information
-
-            </span>
-
-            <span class="button_text description">
-
-                Lorem ipsum dolor sit amet consectetur
-
-            </span>
-
-        </a>
-        <!-- END link -->
+        <?php endforeach; ?>
 
     </div>
 
