@@ -6,12 +6,8 @@
     // import modules
     import $ from 'jquery';
 
-    // slick.js
-    require( 'slick-carousel' );
-    import slick from 'slick-carousel';
-
     // datatables
-    // import DataTable from 'datatables.net';
+    import DataTable from 'datatables.net';
 
 // ========================================================================================================
 // END :: require + modules + dependencies
@@ -26,9 +22,6 @@
     // homepage slideshow
     const slideshow = $( '#custom_billboard.slideshow .slideshow_slides' );
 
-    // objects
-    var toggleMe = $( '.toggle_me' );
-
 // ========================================================================================================
 // END :: config.objects
 // ========================================================================================================
@@ -42,8 +35,33 @@
     // you know what it is bruh
     $(document).ready( function() {
 
-        // datatables
+        // script check
+        console.log( 'ball so hard' );
+
+        // render datatable
         renderProcedureSearch();
+
+        // dynamic table display variables
+        var procedures = $('#test_procedures_filter input');
+        var toggleable = $('.toggle_me');
+
+        // dev test
+        procedures.on( 'input', function() {
+
+            // test length
+            if ( this.value.length >= 3 ) {
+
+                toggleable.addClass( 'revealed' ).removeClass( 'disabled' );
+                console.log( 'loaded' );
+
+            } else if ( this.value.length < 3 ) {
+
+                toggleable.addClass( 'disabled' ).removeClass( 'revealed' );
+                console.log( 'unloaded' );
+
+            }
+
+        });
 
     });
 
@@ -61,21 +79,23 @@
     function renderProcedureSearch() {
 
         // toolbars
-        var controlfields = $('#procedures_fields');
+        var controlfields = $('#search_procedures_input_control');
         var procedureinfo = $('#procedures_info');
         var controlpages  = $('#procedures_controls');
         
         // initiate
         var table = $('#test_procedures').DataTable( {
 
-            'order'    : [[ 1, 'asc' ]],
-            stateSave  : true,
-            responsive : true,
-            // info       : false,
-            // lengthMenu : [ 0, 10, 25 ],
-            language   : {
+            'order'      : [[ 1, 'asc' ]],
+            // stateSave    : true,
+            responsive   : true,
+            pageLength   : -1,
+            info         : false,
+            paging       : false,
+            lengthChange : false,
+            language     : {
 
-                searchPlaceholder : 'search by species or procedure name'
+                searchPlaceholder : 'to display results, please input 3 or more characters...'
 
             }
 

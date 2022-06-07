@@ -25,9 +25,9 @@
 
                 linear-gradient(
                     
-                    90deg,
-                    transparentize( $g140, 0.345 ) 0%,
-                    transparentize( transparent, 1.000 ) 60%
+                    99deg,
+                    transparentize( $blue, 0.465 ) 0%,
+                    transparentize( transparent, 1.000 ) 100%
 
                 )
                 
@@ -35,35 +35,179 @@
 
         }
 
-        // common toolbar
-        .toolbar {
+        // main control container
+        #search_procedures_controls_container {
 
-            height: 5rem;
+            @include flex-h-j-v-t ( false );
 
-            // toggle state
-            &.toggle_me {
+        }
+
+        // static content
+        #search_procedures_static {
+
+            flex-grow: 1;
+
+            // heading
+            h3 {
+
+                margin: 0 0 1rem 0;
+
+                @include font ( $klavislim, 1.5rem, 400 );
+
+                @include text ( $up );
+
+                @include typo ( 1rem, 0.045em );
+
+                @include color ( $cvellow );
+
+            }
+
+            // text
+            p {
+
+                margin: 0 0 0 0;
+
+                @include font ( $industry, inherit, 600 );
+
+                @include typo ( inherit, 0.045em );
+
+            }
+
+        }
+
+        // control group
+        #search_procedures_input {
+
+            @include flex-h-j-v-c( false );
+
+            min-width: 24rem;
+
+        }
+
+        // control group
+        #search_procedures_input_control {
+
+            width: 100%;
+            height: 3rem;
+
+            // mobile
+            @include breakpoint ( small only ) {
+
+                @include font( $industry, 0.6875rem, 700 );
+
+            }
+
+        }
+
+        // control directory view(s)
+        .dataTables_filter {
+
+            display: inline-block;
+
+            min-width: 24rem;
+            height: 3rem;
+
+            // background-color: red;
+
+            @include shadowbox ( 1rem, 2rem, black, 0.535 );
+
+            // label
+            label {
+
+                position: relative;
+
+                @include flex-h-s-v-c ( true );
+
+                width: 24rem;
+                height: 3rem;
+                margin: 0 0 0 0;
+                padding: 0 0 0 3rem;
+
+                text-indent: -9999rem;
+
+                overflow: hidden;
+
+                @include color ( white, 1.000 );
 
                 transition: $all220;
 
-                // disabled
-                &.disabled {
+                // icon
+                &:before {
 
-                    // display: none !important;
+                    position: absolute;
 
-                    visibility: hidden;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
 
-                    opacity: 0.000;
+                    z-index: 100;
+
+                    text-indent: 0;
+
+                    overflow: visible;
+
+                    @include codicon( 3rem, 3rem, 1rem, 1rem, white, '\EF0F' );
+                    @include codicon( 3rem, 3rem, 1rem, 1rem, white, '\EB37' );
+
+                    @include fill ( white, 0.865 );
+                    @include fill ( $roarange );
 
                 }
 
-                // revealed
-                &.revealed {
+            }
 
-                    // display: block !important;
+            // input
+            input {
 
-                    visibility: visible;
+                // @include flex-h-s-v-c( true );
 
-                    opacity: 1.000;
+                width: 21rem;
+                height: 3rem;
+                margin: 0 0 0 0;
+                padding: 0 0.5rem 0 1rem;
+
+                border: 1px solid transparent;
+
+                @include font( $industry, 0.75rem, 600 );
+
+                @include typo ( 0.5rem, 0.045em );
+
+                @include color( white, 0.000 );
+
+                @include fill( white, 0.965 );
+
+                // @include shadowbox ( 1rem, 2rem, black, 0.535 );
+
+                transition: $all220;
+
+                // placeholder
+                &::placeholder {
+
+                    @include font ( $industry, 0.6875rem, 600, italic );
+
+                    @include color ( white, 0.365 );
+
+                }
+
+                // focus state
+                &:focus {
+
+                    border: 1px solid $roarange;
+                    border-left: transparent;
+
+                    @include fill( white, 0.865 );
+
+                    // @include shadowbox( 1rem, 2rem, black, 0.565 );
+
+                    outline: none;
+
+                    &::placeholder {
+
+                        font-style: normal;
+
+                        @include color ( white, 0.465 );
+
+                    }
 
                 }
 
@@ -71,20 +215,47 @@
 
         }
 
-        // toolbar
-        #procedures_toolbar {
+        // view all procedures
+        #view_all_procedures {
 
-            height: 3rem;
-            margin: 0 0 2rem;
+            // link
+            #view_all_procedures_link {
 
-            @include font( $industry, 0.875rem, 600 );
+                @include flex-h-c-v-c( false );
 
-            // mobile
-            @include breakpoint ( small only ) {
+                height: 3rem;
+                margin: 0 2rem 0 0;
+                padding: 0.0625rem 1.25rem 0 1.25rem;
 
-                height: auto;
+                @include font ( $industry, 0.6875rem, 700 );
+
+                @include text ( none );
+
+                @include typo ( 0.5rem, 0.035em );
+
+                @include color( white );
+
+                @include fill ( $blue );
+
+                @include shadowbox ( 0.75rem, 2rem, black, 0.565 );
+
+                transition: $all220;
+
+                // hover state
+                &:hover {
+
+                    @include fill ( $g140 );
+
+                }
 
             }
+
+        }
+
+        // auto markup (EXPLORE API -> RESOLVE PROGRAMATICALLY)
+        .dataTables_wrapper {
+
+            margin: 0 0 0 0;
 
         }
 
@@ -92,6 +263,7 @@
         .procedures {
 
             width: 100% !important;
+            margin: 2rem 0 0 0;
 
             @include font( $industry, 0.875rem, 600 );
 
@@ -103,7 +275,7 @@
                 // disabled
                 &.disabled {
 
-                    // display: none;
+                    display: none;
 
                     visibility: hidden;
 
@@ -114,7 +286,7 @@
                 // revealed
                 &.revealed {
 
-                    // display: block;
+                    display: table;
 
                     visibility: visible;
 
@@ -260,664 +432,6 @@
                     a {
 
                         @include color( $campaign, 0.000 );
-
-                    }
-
-                }
-
-            }
-
-        }
-
-        // control group
-        #procedures_fields {
-
-            @include flex-h-j-v-c( false );
-
-        }
-
-        // control group
-        #procedures_info {
-
-            height: 3rem;
-
-            // mobile
-            @include breakpoint ( small only ) {
-
-                @include font( $industry, 0.6875rem, 700 );
-
-            }
-
-        }
-
-        // control directory view(s)
-        .dataTables_filter {
-
-            @include flex-h-s-v-c( false );
-
-            height: 3rem;
-
-            // label
-            label {
-
-                position: relative;
-
-                // width: 18rem;
-                height: 3rem;
-                margin: 0 0 0 0;
-                padding: 0 0 0 0;
-
-                // overflow: hidden;
-
-                // text-indent: -9999em;
-
-                transition: $all220;
-
-                // icon
-                &:before {
-
-                    position: absolute;
-
-                    z-index: 100;
-
-                    // @include codicon( 2rem, 2rem, 0.5rem, 1rem, white, '\EF0F' );
-
-                    text-indent: 0;
-
-                    @include fill ( $roarange, 0.000 );
-
-                }
-
-            }
-
-            // input
-            input {
-
-                @include flex-h-s-v-c( true );
-
-                width: 16rem;
-                height: 3rem;
-                margin: 0 0 0 0.75rem;
-                padding: 0 0.5rem 0 0.75rem;
-
-                border: 1px solid transparent;
-
-                @include font( $industry, 0.75rem, 600 );
-
-                @include typo ( 0.5rem, 0.045em );
-
-                @include color( white, 0.000 );
-
-                @include fill( white, 0.965 );
-
-                @include shadowbox ( 1rem, 2rem, black, 0.535 );
-
-                transition: $all220;
-
-                // placeholder
-                &::placeholder {
-
-                    @include font ( $industry, 0.75rem, 600, italic );
-
-                    @include color ( white, 0.365 );
-
-                }
-
-                // focus state
-                &:focus {
-
-                    border: 1px solid $roarange;
-
-                    @include fill( white, 0.865 );
-
-                    @include shadowbox( 1rem, 2rem, black, 0.565 );
-
-                    outline: none;
-
-                    &::placeholder {
-
-                        font-style: normal;
-
-                        @include color ( white, 0.465 );
-
-                    }
-
-                }
-
-            }
-
-        }
-
-        // control directory view(s)
-        .dataTables_length {
-
-            @include flex-h-j-v-c( true );
-
-            height: 3rem;
-
-            // label
-            label {
-
-                @include flex-h-j-v-c( true );
-
-            }
-
-            // select
-            select {
-
-                @include flex-h-e-v-c( true );
-
-                // width: 3rem;
-                height: 2rem;
-                margin: 0 0.5rem 0 0.5rem;
-                padding: 0 0.25rem 0 0.5rem;
-
-                border: 1px solid transparent;
-                border-radius: 0px;
-
-                @include font( $industry, 0.875rem, 700 );
-
-                @include text( none, center );
-
-                @include color( white, 0.000 );
-
-                @include fill( white, 0.965 );
-
-                transition: $all220;
-
-                @include shadowbox( 1rem, 2rem, black, 0.565 );
-
-                // focus
-                &:focus {
-
-                    border-color: $roarange;
-
-                    outline: none;
-
-                    @include shadowbox( 1rem, 2rem, black, 0.565 );
-
-                }
-
-            }
-
-        }
-
-        // directory info
-        .dataTables_info {
-
-            @include flex-h-c-v-c( false );
-
-            float: none;
-
-            height: 3rem;
-
-        }
-
-        // pagination
-        #procedures_controls {
-
-            @include flex-h-c-v-c( false );
-
-            height: 5rem;
-
-            @include font( $industry, 0.875rem, 600 );
-
-            // mobile
-            @include breakpoint ( small only ) {
-
-                height: 3rem;
-
-            }
-
-            // pagination controls
-            .dataTables_paginate {
-
-                @include flex-h-c-v-c( false );
-
-                width: 50%;
-
-                // mobile
-                @include breakpoint ( small only ) {
-
-                    width: 100%;
-
-                }
-
-                // directions
-                .dataTables_previous,
-                .dataTables_next {
-
-                    // disabled
-                    &.disabled {
-
-                        // hover state
-                        &:hover {
-
-                            @include fill( white, 0.000 );
-
-                        }
-
-                    }
-
-                }
-
-                // ellipsis
-                .ellipsis {
-
-                    @include flex-v-c-h-c( true );
-
-                    padding: 0 0.5rem 0 0.5rem;
-
-                }
-
-                // button
-                .paginate_button {
-
-                    @include flex-v-c-h-c( true );
-
-                    min-width: 3rem;
-                    height: 3rem;
-                    margin: 0 0 0 0;
-                    padding: 0 0.5rem 0 0.5rem;
-
-                    @include color( $app05, 0.265 );
-
-                    color: transparentize( white, 0.000 ) !important;
-
-                    text-decoration: none;
-
-                    transition: all 320ms $outex 0ms;
-
-                    // hover state
-                    &:hover {
-
-                        @include color( white, 0.000 );
-
-                        color: white !important;
-
-                        @include fill( $campaign, 0.000 );
-
-                    }
-
-                    // disabled state
-                    &.disabled {
-
-                        @include color( $app05, 0.625 );
-
-                        color: transparentize( white, 0.625 ) !important;
-
-                        // hover state
-                        &:hover {
-
-                            color: transparentize( white, 0.625 ) !important;
-
-                            @include fill( transparent, 1.000 );
-
-                        }
-
-                    }
-
-                    // current state
-                    &.current {
-
-                        @include color( white, 0.000 );
-
-                        color: $campaign !important;
-
-                        @include fill( white, 0.965 );
-
-                        transition: all 320ms $outex 0ms;
-
-                    }
-
-                    // mobile
-                    @include breakpoint ( small only ) {
-
-                        min-width: 1.5rem;
-                        height: 1.5rem;
-                        padding: 0.0625rem 0.5rem 0 0.5rem;
-
-                        @include font( $industry, 0.75rem, 700 );
-
-                    }
-
-                }
-
-            }
-
-        }
-
-        // filters
-        #procedures_filters {
-
-            @include flex-h-e-v-c( false );
-
-            height: 5rem;
-
-            // label
-            .filter-label {
-
-                @include flex-h-c-v-c( true );
-
-                height: 2rem;
-                margin: 0 0.5rem 0 0;
-                padding: 0.125rem 1rem 0 1rem;
-
-                @include font( $industry, 0.75rem, 700 );
-
-                @include color( white, 0.365 );
-
-                @include fill( $app05, 0.915 );
-
-            }
-
-            // buttons
-            .filter-link {
-
-                @include flex-h-c-v-c( true );
-
-                height: 2rem;
-                margin: 0 0.5rem 0 0.5rem;
-                padding: 0.125rem 1rem 0 1rem;
-
-                @include font( $industry, 0.75rem, 700 );
-
-                text-decoration: none;
-
-                @include typo( 0.5rem, 0.025em );
-
-                @include color( $g135, 0.000 );
-
-                @include fill( $g135, 0.865 );
-
-                transition: all 220ms linear 0ms;
-
-                // hover state
-                &:hover {
-
-                    @include color( white, 0.000 );
-
-                    @include fill( $g135, 0.000 );
-
-                }
-
-                // all members
-                &.all {
-
-                    @include color( $roarange, 0.000 );
-
-                    @include fill( $roarange, 0.865 );
-
-                    // hover state
-                    &:hover {
-
-                        @include color( white, 0.000 );
-
-                        @include fill( $roarange, 0.000 );
-
-                    }
-
-                }
-
-            }
-
-        }
-
-        // show button
-        #procedures_reveal {
-
-            @include flex-h-c-v-c ( false );
-
-            @include hide;
-
-            // button
-            #reveal_button {
-
-                @include flex-h-c-v-c ( true );
-
-                height: 3rem;
-                margin: 1rem 0 0 0;
-                padding: 0.065rem 1.25rem 0 1.25rem;
-
-                @include font ( $klavislim, 1rem, 400 );
-
-                @include text ( $up );
-
-                @include typo ( 0.75rem, 0.045em );
-
-                @include color ( white );
-
-                @include fill ( white, 0.965 );
-
-                @include shadowbox( 1rem, 2rem, black, 0.565 );
-
-                transition: $all220;
-
-                // hover state
-                &:hover {
-
-                    @include fill ( $roarange );
-
-                }
-
-            }
-
-        }
-
-        // results
-        #search_results {
-
-            width: 65%;
-
-            padding: 2rem 2rem 2rem 0;
-
-            // visibility: hidden;
-
-            span {
-
-                @include flex-h-s-v-c( false );
-
-                height: 3rem;
-                padding: 0 0 0 1.5rem;
-
-                @include fill ( white, 0.965 );
-
-                @include shadowbox( 1rem, 2rem, black, 0.565 );
-
-            }
-
-        }
-
-        // search box
-        #search_field {
-
-            @include flex-h-e-v-c( false );
-
-            width: 35%;
-            padding: 2rem 2rem 2rem 2rem;
-
-            // view all link
-            #view_all {
-
-                position: relative;
-
-                @include flex-h-c-v-c( false );
-
-                flex-grow: 1;
-
-                height: 3rem;
-                margin: 0 0 0 0;
-                padding: 0.125rem 2.5rem 0 1rem;
-
-                @include font( $industry, 0.6875rem, 700 );
-
-                @include typo( 0.4375rem, 0.055em );
-
-                @include text( $up );
-
-                @include color( white );
-
-                @include fill ( white, 0.965 );
-
-                // @include shadowbox( 1rem, 2rem, black, 0.565 );
-
-                transition: $all220;
-
-                // before
-                &:before {
-
-                    position: absolute;
-
-                    top: 0.5rem;
-                    right: 0.5rem;
-                    // bottom: 0;
-
-                    @include codicon( 2rem, 2rem, 0.5rem, 0.75rem, white, '\EEC9' );
-
-                    transition: $all220;
-
-                }
-
-            }
-
-            // form
-            #search_database_form {
-
-                @include flex-h-j-v-s( false );
-
-                flex-grow: 1;
-
-                // width: 100%;
-
-                @include fill( $dark, 0.000 );
-
-                @include shadowbox( 1rem, 2rem, black, 0.565 );
-
-            }
-
-            // fields
-            input {
-
-                display: inline-block;
-
-                height: 3rem;
-                margin: 0 0 0 0;
-
-                border: none;
-
-                // text
-                &[type='text'] {
-
-                    width: calc( 100% - 3rem );
-                    padding: 0.0625rem 1rem 0 1rem;
-
-                    border: 1px solid transparent;
-
-                    @include font( $industry, 0.75rem, 600 );
-
-                    @include typo( 0.75rem, 0.045em );
-
-                    @include color( white );
-
-                    @include fill( white, 0.915 );
-                    // @include fill( $dark, 0.000 );
-
-                    transition: $all220;
-
-                    // hover state
-                    &:hover {
-
-                        @include fill( white, 0.765 );
-
-                    }
-
-                    // focus state
-                    &:focus {
-
-                        border: 1px solid $roarange;
-
-                        @include fill( white, 0.865 );
-
-                        outline: none;
-
-                        &::placeholder {
-
-                            font-style: normal;
-
-                            @include color ( white, 0.465 );
-
-                        }
-
-                    }
-
-                    // placeholder
-                    &::placeholder {
-
-                        @include font( $industry, 0.75rem, 600, italic );
-
-                        @include typo( 0.75rem, 0.045em );
-
-                        @include color( white, 0.465 );
-
-                    }
-
-                }
-
-                // submit
-                &[type='submit'] {
-
-                    position: relative;
-
-                    display: block;
-
-                    width: 3rem;
-                    height: 3rem;
-                    padding: 0.125rem 1rem 0 1rem;
-
-                    overflow: hidden;
-
-                    @include font( $industry, 0.6875rem, 700 );
-
-                    @include text( $up, center );
-
-                    @include typo( 0.75rem, 0.035em );
-
-                    @include color( white );
-
-                    @include fill( darken( $roarange, 10% ) );
-                    @include fill( $roarange );
-
-                    text-indent: -9999rem;
-
-                    background: {
-
-                        image: url(../img/icons/icon_search_folder.svg);
-                        repeat: no-repeat;
-                        size: 3rem 3rem;
-
-                    }
-
-                    transition: $all220;
-
-                    // hover state
-                    &:hover {
-
-                        @include fill( $roarange );
-
-                    }
-
-                    // before
-                    &:before {
-
-                        position: absolute;
-
-                        top: 0;
-                        bottom: 0;
-                        left: 0.25rem;
-
-                        z-index: 100;
-
-                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, white, '\E90D' );
 
                     }
 

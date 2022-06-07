@@ -16,22 +16,64 @@
 <!-- search -->
 <div id="search_procedure_database">
 
-    <!-- toolbar.DEV -->
-    <div id="procedures_toolbar" class="toolbar">
+    <!-- static content + input control -->
+    <div id="search_procedures_controls_container">
 
-        <!-- fields -->
-        <div id="procedures_fields" class="toolbar-control-group">
+        <!-- section static -->
+        <div id="search_procedures_static">
 
+            <!-- heading -->
+            <h3>
 
+                find test information and pricing
+
+            </h3>
+            <!-- END heading -->
+
+            <!-- instructions -->
+            <p>
+
+                Your descriptive text goes here
+
+            </p>
+            <!-- END instructions -->
 
         </div>
-        <!-- END fields -->
+        <!-- END section static -->
+
+        <!-- all procedures -->
+        <div id="view_all_procedures">
+
+            <!-- all procedures -->
+            <a id="view_all_procedures_link" href="https://vdlexternal.cvmbs.colostate.edu/pricelist/pricelistview">
+
+                view all procedures
+
+            </a>
+            <!-- END all procedures -->
+
+        </div>
+        <!-- END all procedures -->
+
+        <!-- toolbar.DEV -->
+        <div id="search_procedures_input">
+
+            <!-- fields -->
+            <div id="search_procedures_input_control" class="toolbar-control-group">
+
+
+
+            </div>
+            <!-- END fields -->
+
+        </div>
+        <!-- END toolbar.DEV -->
 
     </div>
-    <!-- END toolbar.DEV -->
+    <!-- END static content + input control -->
 
     <!-- table -->
-    <table id="test_procedures" class="procedures dt-responsive toggle_me revealed">
+    <table id="test_procedures" class="procedures dt-responsive toggle_me disabled">
 
         <!-- sortable header -->
         <thead>
@@ -107,34 +149,6 @@
 
     </table>
     <!-- END table -->
-
-    <!-- pagination -->
-    <div id="procedures_controls" class="toolbar toggle_me revealed">
-
-
-
-    </div>
-    <!-- END pagination -->
-
-    <!-- info -->
-    <div id="procedures_info" class="toolbar toggle_me revealed">
-
-
-
-    </div>
-    <!-- END info -->
-
-    <!-- control button -->
-    <div id="procedures_reveal">
-
-        <button id="reveal_button" class="control_button">
-
-            show results
-
-        </button>
-
-    </div>
-    <!-- END control button -->
 
 </div>
 <!-- END search -->
