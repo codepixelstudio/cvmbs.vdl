@@ -48,15 +48,15 @@
             flex-grow: 1;
 
             // heading
-            h3 {
+            h2 {
 
                 margin: 0 0 1rem 0;
 
-                @include font ( $klavislim, 1.5rem, 400 );
+                // @include font ( $klavislim, 1.5rem, 400 );
 
                 @include text ( $up );
 
-                @include typo ( 1rem, 0.045em );
+                @include typo ( 2rem, inherit );
 
                 @include color ( $cvellow );
 

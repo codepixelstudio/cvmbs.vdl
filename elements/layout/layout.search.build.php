@@ -11,6 +11,9 @@
     // top level object
     $procedureList = $procedureData->Results->TestPriceList;
 
+    // ACF group
+    $homepage_options = get_field( 'vdl_homepage_options' );
+
 // ======================================================================================================================== ?>
 
 <!-- search -->
@@ -23,17 +26,17 @@
         <div id="search_procedures_static">
 
             <!-- heading -->
-            <h3>
+            <h2>
 
                 find test information and pricing
 
-            </h3>
+            </h2>
             <!-- END heading -->
 
             <!-- instructions -->
             <p>
 
-                Your descriptive text goes here
+                <?php echo $homepage_options[ 'procedure_search_text' ]; ?>
 
             </p>
             <!-- END instructions -->

@@ -16,6 +16,20 @@
 
         overflow: hidden;
 
+        // mobile
+        @include breakpoint ( medium down ) {
+        
+            @include flex-v-t-h-st ( false );
+        
+        }
+
+        // mobile
+        @include breakpoint ( small only ) {
+        
+            margin: 4rem 0 0 0;
+        
+        }
+
         // common
         .billboard_component {
 
@@ -36,6 +50,14 @@
                     size: cover;
                     position: center bottom;
 
+                }
+
+                // mobile
+                @include breakpoint ( medium down ) {
+                
+                    width: 100%;
+                    height: 50vh;
+                
                 }
 
                 // after
@@ -93,7 +115,14 @@
 
                     z-index: 20;
 
-                    margin: 0 5rem 5rem 5rem;
+                    margin: 0 2rem 5rem 5rem;
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+                    
+                        margin: 0 2rem 2rem 2rem;
+                    
+                    }
 
                     // headline
                     .headline {
@@ -105,6 +134,13 @@
                         @include typo( 2.875rem, inherit );
 
                         @include text( $up );
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+                        
+                            @include font( $klavislim, 2.5rem, 400 );    
+                        
+                        }
 
                         // white
                         .white {
@@ -143,6 +179,15 @@
 
                 z-index: 100;
 
+                // mobile
+                @include breakpoint ( small only ) {
+                
+                    left: 2rem;
+
+                    @include flex-h-j-v-t ( false );
+                
+                }
+
                 // common
                 .quicklink {
 
@@ -150,10 +195,12 @@
 
                     @include flex-h-s-v-c( true );
 
-                    height: 2rem;
-                    padding: 0.1875rem 1rem 0 2.5rem;
+                    height: 3rem;
+                    padding: 0.125rem 1.25rem 0 2.75rem;
+                    margin: 0 0 0 1rem;
 
                     @include font( $industry, 0.6875rem, 700 );
+                    // @include font( $klavislim, 0.875rem, 400 );
 
                     @include typo( 0.4375rem, 0.055em );
 
@@ -167,18 +214,37 @@
 
                     transition: $all220;
 
+                    // mobile
+                    @include breakpoint ( small only ) {
+                    
+                        height: 2rem;
+                        margin: 0 0 0 0;
+                        padding: 0.125rem 1rem 0 2.25rem;
+                    
+                    }
+
                     // before
                     &:before {
 
                         position: absolute;
 
-                        top: 0;
-                        bottom: 0;
-                        left: 0.25rem;
+                        top: 0.5rem;
+                        bottom: 0.5rem;
+                        left: 0.5rem;
 
-                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, $cvellow, '\E90D' );
+                        // @include codicon( 2rem, 2rem, 0.5rem, 1rem, $cvellow, '\E90D' );
+                        @include codicon( 2rem, 2rem, 0.5rem, 1rem, white, '\E90D' );
 
                         transition: $all220;
+
+                        // mobile
+                        @include breakpoint ( small only ) {
+                        
+                            top: 0;
+                            bottom: 0;
+                            left: 0.25rem;
+                        
+                        }
 
                     }
 
@@ -188,13 +254,6 @@
                         @include color( white );
 
                         @include fill( lighten( $g140, 5% ), 0.000 );
-
-                        // before
-                        &:before {
-
-                            // @include color( $g140 );
-
-                        }
 
                     }
 
@@ -222,8 +281,6 @@
 
                     }
 
-                    margin: 0 0 0 1rem;
-
                 }
 
             }
@@ -238,13 +295,25 @@
 
                 @include fill( darken( $beige, 7.5% ) );
 
+                // mobile
+                @include breakpoint ( medium down ) {
+                
+                    @include flex-h-s-v-t ( false );
+
+                    flex-wrap: wrap;
+
+                    width: 100%;
+                    padding: 2rem 1rem 0 1rem;
+                
+                }
+
                 // buttons
                 .sidebar_button {
 
                     @include flex-v-b-h-s( false );
 
                     margin: 0 0 2rem 0;
-                    padding: 4rem 2rem 2rem 2rem;
+                    padding: 2rem 2rem 2rem 2rem;
 
                     @include text( normal, left, none );
 
@@ -253,6 +322,21 @@
                     @include shadowbox( 1rem, 3rem, black, 0.655 );
 
                     transition: $all220;
+
+                    // mobile
+                    @include breakpoint ( medium down ) {
+                    
+                        width: calc( 50% - 2rem );
+                        margin: 0 1rem 2rem 1rem;
+                    
+                    }
+
+                    // mobile
+                    @include breakpoint ( small only ) {
+                    
+                        width: 100%;
+                    
+                    }
 
                     // progressive color
                     &:nth-of-type( 1 ) {
@@ -338,6 +422,13 @@
                             @include color( white );
                             // @include color ( $cvellow );
 
+                            // mobile
+                            @include breakpoint ( small only ) {
+                            
+                                @include font( $klavislim, 1.25rem, 400 );
+                            
+                            }
+
                             // icon
                             &:before {
                                 
@@ -361,6 +452,26 @@
                             @include typo( inherit, 0.055em );
 
                             @include color( white, 0.235 );
+
+                        }
+
+                    }
+
+                }
+
+                #test_information {
+
+                    padding: 2rem 2rem 2rem 2rem;
+
+                    // title
+                    .button_text.title {
+
+                        margin: 0 0 0 0;
+
+                        // icon
+                        &:before {
+
+                            content: '\EBEA';
 
                         }
 

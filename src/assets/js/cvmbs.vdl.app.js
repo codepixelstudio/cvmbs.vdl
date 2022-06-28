@@ -36,7 +36,7 @@
     $(document).ready( function() {
 
         // script check
-        console.log( 'ball so hard' );
+        console.log( 'script' );
 
         // render datatable
         renderProcedureSearch();

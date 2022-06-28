@@ -109,6 +109,18 @@
 
         <?php endforeach; ?>
 
+        <!-- link -->
+        <a id="test_information" class="sidebar_button" href="https://vdlexternal.cvmbs.colostate.edu/PriceList/PriceListView">
+
+            <span class="button_text title">
+
+                test information and price list
+
+            </span>
+
+        </a>
+        <!-- END link -->
+
     </div>
 
 </section>

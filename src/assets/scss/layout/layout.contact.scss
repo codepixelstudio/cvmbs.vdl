@@ -17,12 +17,35 @@
 
             @include fill( $beige );
 
+            // mobile
+            @include breakpoint ( large only ) {
+            
+                @include flex-h-j-v-t ( false );
+            
+            }
+
+            // mobile
+            @include breakpoint ( medium down ) {
+            
+                flex-wrap: wrap;
+            
+            }
+
         }
 
         // contact entries
         .contact_info {
 
             @include flex-h-s-v-st( false );
+
+            // mobile
+            @include breakpoint ( large down ) {
+            
+                @include flex-h-s-v-t ( false );
+
+                flex-wrap: wrap;
+            
+            }
 
             // buttons
             .contact_entry {
@@ -36,6 +59,14 @@
                 padding: 0 0 0 2.25rem;
 
                 // @include fill( red, 0.565 );
+
+                // mobile
+                @include breakpoint ( medium down ) {
+                
+                    height: auto;
+                    margin: 0 1rem 1rem 0;
+                
+                }
 
                 // before
                 &:before {
@@ -58,6 +89,13 @@
                     @include typo( 2rem, 0.000em );
 
                     // @include fill( $blue, 0.565 );
+
+                    // mobile
+                    @include breakpoint ( medium down ) {
+                    
+                        padding-top: 0;
+                    
+                    }
 
                 }
 
@@ -179,6 +217,21 @@
 
                 @include fill( $g140 );
 
+            }
+
+            // mobile
+            @include breakpoint ( large only ) {
+            
+                flex-basis: 30%;
+                align-self: flex-start;
+            
+            }
+
+            // mobile
+            @include breakpoint ( medium down ) {
+            
+                margin: 1rem 0 0 0;
+            
             }
 
         }

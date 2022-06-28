@@ -1,8 +1,11 @@
-<?php
+<?php // ========================================================================================================================
+// script :: homepage contact info
 
-    // stuff
+    // get fields
+    $homepage_options    = get_field( 'vdl_homepage_options' );
+    $contact_information = $homepage_options[ 'contact_information' ];
 
-?>
+// ======================================================================================================================== ?>
 
 <!-- about -->
 <div class="homepage_section contact">
@@ -19,7 +22,7 @@
 
             <span class="entry_text content">
 
-                (970) 297-1281
+                <?php echo $contact_information[ 'phone' ]; ?>
 
             </span>
 
@@ -35,7 +38,7 @@
 
             <span class="entry_text content">
 
-                dlab@colostate.edu
+                <?php echo $contact_information[ 'email' ]; ?>
 
             </span>
 
@@ -45,13 +48,13 @@
 
             <span class="entry_text label">
 
-                fedex &amp; ups shipping address:
+                <?php echo $contact_information[ 'address_1' ][ 'address_label' ]; ?>
 
             </span>
 
             <span class="entry_text content">
 
-                2450 Gillette Drive, Fort Collins, CO 80526
+                <?php echo $contact_information[ 'address_1' ][ 'street_address' ]; ?>
 
             </span>
 
@@ -61,13 +64,13 @@
 
             <span class="entry_text label">
 
-                usps shipping address:
+                <?php echo $contact_information[ 'address_2' ][ 'address_label' ]; ?>
 
             </span>
 
             <span class="entry_text content">
 
-                200 West Lake Street, 1644 Campus Delivery, Fort Collins, CO 80523-1644
+                <?php echo $contact_information[ 'address_2' ][ 'street_address' ]; ?>
 
             </span>
 
@@ -75,9 +78,9 @@
 
     </div>
 
-    <a id="contact_button" href="#">
+    <a id="contact_button" href="<?php echo $contact_information[ 'contact_button' ][ 'url' ]; ?>">
         
-        view all contact information
+        <?php echo $contact_information[ 'contact_button' ][ 'title' ]; ?>
     
     </a>
 

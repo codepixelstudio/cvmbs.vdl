@@ -155,7 +155,9 @@
                 <h2 class="links-header">
 
                     <!-- get in touch -->
-                    contact <?php echo $contact_article; ?>
+                    <!-- contact <?php //echo $contact_article; ?> -->
+
+                    main lab contact information
 
                 </h2>
 
@@ -182,6 +184,18 @@
                     <span class="contact-text">
 
                         <?php echo $footer_contact_info[ 'phone' ]; ?>
+
+                    </span>
+
+                    <small class="contact-label">
+
+                        e-mail
+
+                    </small>
+
+                    <span class="contact-text">
+
+                        <a href="mailto:<?php echo $footer_contact_info[ 'email' ]; ?>"><?php echo $footer_contact_info[ 'email' ]; ?></a>
 
                     </span>
 
