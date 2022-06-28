@@ -87,6 +87,24 @@
     <!-- sidebar -->
     <div class="billboard_component sidebar">
 
+        <!-- link -->
+        <a id="test_information" class="sidebar_button" href="https://vdlexternal.cvmbs.colostate.edu/PriceList/PriceListView">
+
+            <span class="button_text title">
+
+                test information and price list
+
+            </span>
+
+            <span class="button_text description">
+
+                view all test procedures and pricing information
+
+            </span>
+
+        </a>
+        <!-- END link -->
+
         <?php foreach ( $sidebar_buttons as $sidebar_button ): ?>
 
         <!-- link -->
@@ -108,18 +126,6 @@
         <!-- END link -->
 
         <?php endforeach; ?>
-
-        <!-- link -->
-        <a id="test_information" class="sidebar_button" href="https://vdlexternal.cvmbs.colostate.edu/PriceList/PriceListView">
-
-            <span class="button_text title">
-
-                test information and price list
-
-            </span>
-
-        </a>
-        <!-- END link -->
 
     </div>
 
